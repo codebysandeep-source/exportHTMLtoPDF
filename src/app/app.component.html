@@ -10,7 +10,7 @@
 
       <div class="float-end d-flex w-50">
         <select [(ngModel)]="pageSize" class="form-select">
-          <option *ngFor="let item of pageSizeList" [value]="item">{{item}}</option>
+          <option *ngFor="let item of pageSizeList" [value]="item">{{item | titlecase}}</option>
         </select> &nbsp;
         <button class="btn btn-sm btn-outline-success w-25" (click)="viewPDF()">View PDF</button> &nbsp;
         <button class="btn btn-sm btn-success w-50" (click)="downloadPDF()">Download PDF</button>
