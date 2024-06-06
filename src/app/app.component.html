@@ -1,0 +1,54 @@
+<div class="container my-3">
+  <div class="row">
+
+    <h4>Export HTML to PDF</h4>
+    <div class="col-12 border shadow-sm p-4">
+
+      <h5 class="float-start">
+        <b class="text-danger" style="font-size: 10px;">Angular</b> View/Download PDF
+      </h5>
+
+      <div class="float-end d-flex w-50">
+        <select [(ngModel)]="pageSize" class="form-select">
+          <option *ngFor="let item of pageSizeList" [value]="item">{{item}}</option>
+        </select> &nbsp;
+        <button class="btn btn-sm btn-outline-success w-25" (click)="viewPDF()">View PDF</button> &nbsp;
+        <button class="btn btn-sm btn-success w-50" (click)="downloadPDF()">Download PDF</button>
+      </div>
+
+      <span style="float: inline-end;margin: -15px -5rem 0 0;font-size: 11px;">Select Page Size</span>
+
+    </div>
+  </div>
+</div>
+
+<!-- PDF Content -->
+<div id="htmlContent" class="container">
+  <div class="row">
+    <div class="col-12 p-5">
+      <div class="text-center">
+        <h1><span class="text-primary">Hi</span> Developer!</h1>
+        <p>This is a sample content to be exported as PDF.</p>
+      </div>
+
+      <div class="p-5 border-top my-5">
+        <table>
+          <thead class="table-style">
+            <tr class="border bg-light">
+              <th>Id</th>
+              <th>Title</th>
+              <th>Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border" *ngFor="let item of tableList">
+              <td>{{item.id}}</td>
+              <td>{{item.title}}</td>
+              <td>{{item.body}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
